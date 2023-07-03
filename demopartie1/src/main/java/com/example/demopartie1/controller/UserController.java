@@ -1,15 +1,13 @@
 package com.example.demopartie1.controller;
 
+import com.example.demopartie1.Validator.ValidationResult;
 import com.example.demopartie1.entity.User;
 import com.example.demopartie1.entity.UserDetails;
 import com.example.demopartie1.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -56,4 +54,74 @@ public class UserController {
         //Get Detail
         return new UserDetails();
     }*/
+
+
+    /**
+     * Demo LOC
+     * */
+
+    @PostMapping("/users")
+    public ResponseEntity createUser(@RequestBody User user) {
+        /*// vérifier le nom
+        if (user.getName() == null || user.getName().isEmpty()) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        // vérifier l'email
+        if (user.getEmail() == null || user.getEmail().isEmpty()) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        // vérifier l'âge
+        if (user.getAge() < 0 || user.getAge() > 120) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        // vérifier le numéro de téléphone
+        if (user.getPhoneNumber() == null || user.getPhoneNumber().isEmpty()) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        // vérifier le pays
+        if (user.getCountry() == null || user.getCountry().isEmpty()) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        userRepository.save(user);
+        return ResponseEntity.ok(user);*/
+
+        ValidationResult validationResult = validateUser(user);
+        if(validationResult.isValid()){
+            userRepository.save(user);
+            return ResponseEntity.ok(user);
+        }
+        return ResponseEntity.badRequest().body(validationResult.getErrorMessage());
+    }
+
+    public ValidationResult validateUser(User user) {
+        if (user.getName() == null || user.getName().isEmpty()) {
+            return ValidationResult.builder().valid(false).errorMessage("Invalid name").build();
+        }
+
+        // vérifier l'email
+        if (user.getEmail() == null || user.getEmail().isEmpty()) {
+            return ValidationResult.builder().valid(false).errorMessage("Invalid email").build();
+        }
+
+        // vérifier l'âge
+        if (user.getAge() < 0 || user.getAge() > 120) {
+            return ValidationResult.builder().valid(false).errorMessage("Invalid age").build();
+        }
+
+        // vérifier le numéro de téléphone
+        if (user.getPhoneNumber() == null || user.getPhoneNumber().isEmpty()) {
+            return ValidationResult.builder().valid(false).errorMessage("Invalid phonenumber").build();
+        }
+
+        // vérifier le pays
+        if (user.getCountry() == null || user.getCountry().isEmpty()) {
+            return ValidationResult.builder().valid(false).errorMessage("Invalid country").build();
+        }
+        return ValidationResult.builder().valid(true).build();
+    }
 }
