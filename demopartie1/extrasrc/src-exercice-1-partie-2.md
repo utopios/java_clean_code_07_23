@@ -2,6 +2,25 @@
 @Service
 public class TaskService {
     
+    public int calculatePriorityRefactored(Task task) {
+        int priority = 2;
+        if(task.isUrgent()) {
+            if(task.getDeadline().isBefore(LocalDate.now())) {
+                priority = 10;
+            }else {
+                priority = 5;
+            }
+        }
+        else {
+            if (task.getCategory().equals("High")) {
+                priority = 8;
+            } else if (task.getCategory().equals("Medium")) {
+                priority = 5;
+            } 
+        }
+        return priority;
+    }
+    
     public int calculatePriority(Task task) {
         if (task.isUrgent() && task.getDeadline().isBefore(LocalDate.now())) {
             return 10;
