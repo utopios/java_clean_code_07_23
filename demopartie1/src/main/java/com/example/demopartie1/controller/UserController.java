@@ -1,6 +1,7 @@
 package com.example.demopartie1.controller;
 
 import com.example.demopartie1.entity.User;
+import com.example.demopartie1.entity.UserDetails;
 import com.example.demopartie1.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,17 +28,32 @@ public class UserController {
         if(userOptional.isPresent()) {
             User user = userOptional.get();
             if(details) {
-                return ResponseEntity.ok(getUserDetails(user));
-            } else {
-                return ResponseEntity.ok(user);
-            }
+                /*UserDetails userDetails = getUserDetails(user); //
+                if(userDetails != null) {
+                    user.setDetails(userDetails);
+                    return ResponseEntity.ok(user);
+                } else {
+                    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+                }*/
+                getUserDetails(user);
+                //return ResponseEntity.ok(user);
+            } /*else {
+                //return ResponseEntity.ok(user);
+            }*/
+            return ResponseEntity.ok(user);
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
 
-    private User getUserDetails(User user) {
-        //Get Detail
-        return user;
+    private void getUserDetails(User user) {
+        UserDetails userDetails = new UserDetails();//... Création des details de l'utilisateur
+        if(userDetails != null) {
+            user.setDetails(userDetails);
+        }
     }
+    /*private UserDetails getUserDetails(User user) {
+        //Get Detail
+        return new UserDetails();
+    }*/
 }
