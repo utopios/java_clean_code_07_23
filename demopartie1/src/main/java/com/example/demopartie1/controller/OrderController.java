@@ -23,16 +23,17 @@ public class OrderController {
     @PostMapping("/orders")
     public ResponseEntity<Order> createOrder(@RequestBody Order order, @RequestParam Long customerId) {
         Optional<Customer> customerOptional = customerRepository.findById(customerId);
-        if (customerOptional.isPresent()) {
+        /*if (customerOptional.isPresent()) {
             Customer customer = customerOptional.get();
-            /*order.setCustomer(customer);
+            *//*order.setCustomer(customer);
             order.setDate(new Date());
             order.setStatus("CREATED");
-            Order savedOrder = orderRepository.save(order);*/
+            Order savedOrder = orderRepository.save(order);*//*
             return ResponseEntity.ok(prepareOrder(order, customer));
         } else {
             return ResponseEntity.notFound().build();
-        }
+        }*/
+        return ResponseEntity.ok(prepareOrder(order, customerOptional.get()));
     }
 
     private Order prepareOrder(Order order, Customer customer){
