@@ -40,3 +40,8 @@ mvn clean verify sonar:sonar \
 </reporting>
 ```
 **Commande check**: mvn pmd:pmd
+
+
+**Démarrer un docker compose** : docker-compose up -d
+**Exécuter une commande dans un conteneur docker** : docker exec -it <id_container> <command>
+
