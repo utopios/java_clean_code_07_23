@@ -60,7 +60,6 @@ public class TodoWithViewController {
         if(_userTodoService.isLogged()) {
             try {
                 todoService.updateStatus(id);
-                //response.sendRedirect("/todos-html/detail/"+id);
                 return "redirect:/todos-html/detail/"+id;
             }catch (Exception ex) {
                 throw ex;
@@ -86,7 +85,7 @@ public class TodoWithViewController {
         }
         ModelAndView mv = new ModelAndView("form");
         try {
-            Todo todo = todoService.createTodo(title, description, images);
+            todoService.createTodo(title, description, images);
             response.sendRedirect("/todos-html");
         }catch (Exception ex) {
             mv.addObject("message", "error ajout");

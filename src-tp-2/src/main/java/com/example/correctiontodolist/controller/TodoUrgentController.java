@@ -2,6 +2,7 @@ package com.example.correctiontodolist.controller;
 
 import com.example.correctiontodolist.service.UrgentTodoService;
 import com.example.correctiontodolist.service.UserTodoService;
+import com.example.correctiontodolist.util.Constant;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,7 @@ import java.io.IOException;
 @Controller
 @RequestMapping("urgent")
 public class TodoUrgentController {
+
 
     @Autowired
     private HttpServletResponse _response;
@@ -36,7 +38,7 @@ public class TodoUrgentController {
             //Redirection vers une page d'erreur si la todo ne peut pas être ajouter
         }
         else {
-            _response.sendRedirect("/user/login");
+            _response.sendRedirect(Constant.USER_LOGIN);
         }
     }
 
@@ -50,14 +52,14 @@ public class TodoUrgentController {
             //Redirection vers une page d'erreur si la todo ne peut pas être ajouter
         }
         else {
-            _response.sendRedirect("/user/login");
+            _response.sendRedirect(Constant.USER_LOGIN);
         }
     }
 
     @GetMapping("")
     public ModelAndView displayUrgent() throws IOException {
         if(!_userTodoService.isLogged()) {
-            _response.sendRedirect("/user/login");
+            _response.sendRedirect(Constant.USER_LOGIN);
 
         }
         ModelAndView vm = new ModelAndView("home");

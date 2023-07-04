@@ -13,13 +13,16 @@ import java.util.List;
 @ResponseBody
 public class TodoController {
 
-    @Autowired
-    private TodoService _todoService;
+    private final TodoService todoService;
+
+    public TodoController(TodoService todoService) {
+        this.todoService = todoService;
+    }
 
     @PostMapping("")
     public Todo post(@RequestParam String title, @RequestParam String description) throws Exception {
         try {
-            Todo todo = _todoService.createTodo(title, description);
+            Todo todo = todoService.createTodo(title, description);
             return todo;
         }catch (Exception ex) {
             throw ex;
@@ -29,7 +32,7 @@ public class TodoController {
     @PostMapping("/update")
     public Todo post(@RequestParam Integer id, @RequestParam String title, @RequestParam String description) throws Exception {
         try {
-            Todo todo = _todoService.updateTodo(id,title, description);
+            Todo todo = todoService.updateTodo(id,title, description);
             return todo;
         }catch (Exception ex) {
             throw ex;
@@ -39,7 +42,7 @@ public class TodoController {
     @GetMapping("/delete/{id}")
     public boolean delete(@PathVariable Integer id) throws Exception {
         try {
-            return _todoService.deleteTodo(id);
+            return todoService.deleteTodo(id);
         }catch (Exception ex) {
             throw ex;
         }
@@ -48,13 +51,13 @@ public class TodoController {
     @GetMapping("/update/{id}")
     public boolean updateStatus(@PathVariable Integer id) throws Exception {
         try {
-            return _todoService.updateStatus(id);
+            return todoService.updateStatus(id);
         }catch (Exception ex) {
             throw ex;
         }
     }
     @GetMapping("{status}")
     public List<Todo> get(@PathVariable boolean status) {
-        return _todoService.getByStatus(status);
+        return todoService.getByStatus(status);
     }
 }

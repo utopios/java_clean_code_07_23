@@ -1,6 +1,7 @@
 package com.example.correctiontodolist.controller;
 
 import com.example.correctiontodolist.service.UserTodoService;
+import com.example.correctiontodolist.util.Constant;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,7 +33,7 @@ public class UserTodoController {
     public ModelAndView submitSignIn(@RequestParam String firstName, @RequestParam String lastName, @RequestParam String email, @RequestParam String password) throws IOException {
         ModelAndView mv = new ModelAndView("user-form");
         if(_userTodoService.signIn(firstName,lastName, email, password)) {
-            _response.sendRedirect("/user/login");
+            _response.sendRedirect(Constant.USER_LOGIN);
         }
         mv.addObject("firstName", firstName);
         mv.addObject("lastName", lastName);
