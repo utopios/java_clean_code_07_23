@@ -24,10 +24,7 @@ public class UserTodoService {
                     .password(password)
                     .email(email)
                     .build();
-            if(_userTodoRepository.save(user) != null) {
-                return true;
-            }
-            return false;
+            return _userTodoRepository.save(user) != null;
         }
         return false;
     }
