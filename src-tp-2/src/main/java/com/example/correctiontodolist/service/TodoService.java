@@ -64,7 +64,7 @@ public class TodoService {
         throw new TodoNotFoundException();
     }
 
-    public boolean deleteTodo(int id) throws Exception {
+    public boolean deleteTodo(int id) throws TodoNotFoundException {
         Optional<Todo> optionalTodo = _todoRespository.findById(id);
         if(optionalTodo.isPresent()) {
             _todoRespository.delete(optionalTodo.get());

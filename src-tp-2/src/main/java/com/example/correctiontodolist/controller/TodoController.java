@@ -1,6 +1,7 @@
 package com.example.correctiontodolist.controller;
 
 import com.example.correctiontodolist.entity.Todo;
+import com.example.correctiontodolist.exception.TodoNotFoundException;
 import com.example.correctiontodolist.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -40,12 +41,8 @@ public class TodoController {
     }
 
     @GetMapping("/delete/{id}")
-    public boolean delete(@PathVariable Integer id) throws Exception {
-        try {
+    public boolean delete(@PathVariable Integer id) throws TodoNotFoundException {
             return todoService.deleteTodo(id);
-        }catch (Exception ex) {
-            throw ex;
-        }
     }
 
     @GetMapping("/update/{id}")
@@ -60,4 +57,11 @@ public class TodoController {
     public List<Todo> get(@PathVariable boolean status) {
         return todoService.getByStatus(status);
     }
+
+    @ExceptionHandler(TodoNotFoundException.class)
+    public String handleTodoNotFoundException(TodoNotFoundException ex) {
+        return ex.getMessage();
+    }
+
+
 }
