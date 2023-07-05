@@ -1,5 +1,14 @@
 package com.example.demobdd;
 
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import io.cucumber.spring.CucumberContextConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
+
+
+@CucumberContextConfiguration
+@SpringBootTest(classes = CucumberTestApplication.class)
 public class FindAllBooksStepDefs {
 
     @Given("there are some books in the library")
