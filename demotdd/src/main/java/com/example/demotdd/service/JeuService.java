@@ -1,12 +1,22 @@
 package com.example.demotdd.service;
 
 import com.example.demotdd.model.LePendu;
-import com.example.demotdd.util.Constant;
 import jdk.jshell.spi.ExecutionControl;
+import org.springframework.stereotype.Service;
 
+@Service
 public class JeuService {
+
+    private final GenererService genererService;
+
+
+
     //Démarrer le jeu
     private LePendu pendu;
+
+    public JeuService(GenererService genererService) {
+        this.genererService = genererService;
+    }
 
     public LePendu getPendu() {
         return pendu;
@@ -14,7 +24,18 @@ public class JeuService {
     public LePendu demarrer() throws ExecutionControl.NotImplementedException {
         pendu = new LePendu();
         pendu.setNbEssai(10);
+        pendu.setMot(genererService.genererMot());
         return pendu;
+    }
+
+
+    public void genererMasque() {
+        StringBuilder masque = new StringBuilder();
+        for(int i=0; i < pendu.getMot().length(); i++) {
+            masque.append("*");
+        }
+        pendu.setMasque(masque.toString());
+
     }
     //Tester un char
 

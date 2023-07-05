@@ -23,9 +23,10 @@ public class JeuServiceTest {
     private GenererService genererService;
 
     @BeforeEach()
-    void setUp() {
+    void setUp() throws ExecutionControl.NotImplementedException {
 
         //jeuService = new JeuService(new GenererServiceImpl());
+
     }
 
     @Test
@@ -37,9 +38,18 @@ public class JeuServiceTest {
     }
 
     @Test
-    public void testMethodeDemarrerDoitGenererUnMasqueDuMotAtrouver() throws ExecutionControl.NotImplementedException {
+    public void testMethodeGenererMasqueAvecMotTataDoitRetourner4Etoiles() throws ExecutionControl.NotImplementedException {
         Mockito.when(genererService.genererMot()).thenReturn("tata");
         jeuService.demarrer();
+        jeuService.genererMasque();
         Assertions.assertEquals("****", jeuService.getPendu().getMasque());
+    }
+
+    @Test
+    public void testMethodeGenererMasqueAvecMotGoogleDoitRetourner6Etoiles() throws ExecutionControl.NotImplementedException {
+        Mockito.when(genererService.genererMot()).thenReturn("google");
+        jeuService.demarrer();
+        jeuService.genererMasque();
+        Assertions.assertEquals("******", jeuService.getPendu().getMasque());
     }
 }
