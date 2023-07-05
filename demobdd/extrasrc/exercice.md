@@ -11,3 +11,37 @@ Fonctionnalité 1 : Un utilisateur peut réserver une salle s'il n'y a pas de co
   - Étant donné une salle de conférence qui est déjà réservée pour une certaine période. 
   - Quand un autre utilisateur essaie de réserver cette salle pour la même période.
   - Alors l'utilisateur devrait recevoir un message d'erreur indiquant que la salle est déjà réservée pour cette période.
+
+```java
+@Entity
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+   
+}
+
+@Entity
+public class ConferenceRoom {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    
+}
+
+@Entity
+public class Booking {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @ManyToOne
+    private User user;
+    @ManyToOne
+    private ConferenceRoom conferenceRoom;
+    private LocalDateTime start;
+    private LocalDateTime end;
+    
+}
+```
