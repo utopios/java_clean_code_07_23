@@ -15,7 +15,7 @@ public class LoggingAspect {
         System.out.println("Method Invoked "+ joinPoint.getSignature().getName());
     }
 
-    @After("execution(* *.(..))")
+    @After("execution(* org.example.*.*.(..))")
     //@Around("@annotation(org.example.aspect.Loggable)")
     public void loggingAfter(JoinPoint joinPoint) {
         System.out.println("Method Invoked "+ joinPoint.getSignature().getName());

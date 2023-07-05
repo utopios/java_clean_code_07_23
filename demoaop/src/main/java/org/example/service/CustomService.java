@@ -11,7 +11,7 @@ public class CustomService {
     }
 
 
-    @Transaction
+    @Transaction(value = "HIGH")
     public void methodeTransactional() {
 
     }
