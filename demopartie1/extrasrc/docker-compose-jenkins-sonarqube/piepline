@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+    tools {
+        maven 'maven'
+    }
+    stages {
+        stage('clone resource') {
+            steps {
+                git url : 'https://github.com/utopios/todolist-cicd.git', branch: 'main'
+
+            }
+        }
+        stage('Sonarqube') {
+            steps {
+                withSonarQubeEnv('sonarqube1') {
+                    sh "mvn clean verify sonar:sonar"
+                }
+            }
+        }
+
+        stage('Quality') {
+            steps {
+                waitForQualityGate abortPipeline: true
+            }
+        }
+    }
+}
