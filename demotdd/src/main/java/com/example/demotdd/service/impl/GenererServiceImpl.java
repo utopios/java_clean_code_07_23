@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class GenererServiceImpl implements GenererService {
     @Override
-    public String genererMot() {
+    public String generer() {
         return "toto";
     }
 }
