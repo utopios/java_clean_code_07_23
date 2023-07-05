@@ -1,0 +1,7 @@
+<aspectj>
+    <aspects>
+        <aspect name="org.example.aspect.LoggingAspect"></aspect>
+        <aspect name="org.example.aspect.Transaction"></aspect>
+    </aspects>
+    <weaver options="-verbose"/>
+</aspectj>
