@@ -52,4 +52,17 @@ public class JeuServiceTest {
         jeuService.genererMasque();
         Assertions.assertEquals("******", jeuService.getPendu().getMasque());
     }
+
+    @Test
+    public void testMethodeTesterCharDoitMettreAjourLeMasque() throws ExecutionControl.NotImplementedException {
+        Mockito.when(genererService.genererMot()).thenReturn("google");
+        jeuService.demarrer();
+        jeuService.genererMasque();
+
+        jeuService.testerChar('g');
+        Assertions.assertEquals("g**g**", jeuService.getPendu().getMasque());
+
+    }
+
+
 }

@@ -37,6 +37,18 @@ public class JeuService {
         pendu.setMasque(masque.toString());
 
     }
+
+    public void testerChar(char c) {
+        StringBuilder masque = new StringBuilder();
+        for (int i=0; i < pendu.getMot().length(); i++) {
+            if(pendu.getMot().charAt(i) == c){
+                masque.append(c);
+            }else {
+                masque.append(pendu.getMasque().charAt(i));
+            }
+        }
+        pendu.setMasque(masque.toString());
+    }
     //Tester un char
 
     //Tester si win
