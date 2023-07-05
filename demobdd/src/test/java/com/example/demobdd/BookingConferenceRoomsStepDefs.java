@@ -29,11 +29,11 @@ public class BookingConferenceRoomsStepDefs {
         //Use userService to get User with name => username
         //Use roomServie to get Conference Room with name => roomName
 
-        try {
+        /*try {
             //Use bookingService to save the booking with user and conference room
         }catch (BookingException ex) {
             bookingException = ex;
-        }
+        }*/
     }
 
     @Then("the booking should be successful")

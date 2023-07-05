@@ -12,8 +12,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.List;
 
 
-@CucumberContextConfiguration
-@SpringBootTest(classes = CucumberTestApplication.class)
+/*@CucumberContextConfiguration
+@SpringBootTest(classes = CucumberTestApplication.class)*/
 public class FindAllBooksStepDefs {
 
     private BookService bookService;
