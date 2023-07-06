@@ -1,6 +1,8 @@
 package org.example.service;
 
+import org.example.entity.Reservation;
+
 public interface ReservationService {
 
-    void createReservation(String clientName, String reservationDate, int tableSize);
+    Reservation createReservation(String clientName, String reservationDate, int tableSize);
 }

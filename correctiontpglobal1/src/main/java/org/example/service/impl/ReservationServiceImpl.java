@@ -11,7 +11,9 @@ public class ReservationServiceImpl implements ReservationService {
         this.reservationRespository = reservationRespository;
     }
     @Override
-    public void createReservation(String clientName, String reservationDate, int tableSize) {
-        reservationRespository.save(new Reservation());
+    public Reservation createReservation(String clientName, String reservationDate, int tableSize) {
+        Reservation reservation = new Reservation();
+        Reservation createdReservation = reservationRespository.save(reservation);
+        return createdReservation;
     }
 }
