@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ReservationServiceTest" time="0.207" tests="5" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="sonar.projectName" value="globalTP1"/>
+    <property name="java.specification.version" value="20"/>
+    <property name="sonar.host.url" value="http://localhost:9000"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/ihababadi/Desktop/java_clean_code/correctiontpglobal1/target/test-classes:/Users/ihababadi/Desktop/java_clean_code/correctiontpglobal1/target/classes:/Users/ihababadi/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/Users/ihababadi/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/ihababadi/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/Users/ihababadi/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/ihababadi/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/Users/ihababadi/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/Users/ihababadi/.m2/repository/org/mockito/mockito-core/4.1.0/mockito-core-4.1.0.jar:/Users/ihababadi/.m2/repository/net/bytebuddy/byte-buddy/1.12.1/byte-buddy-1.12.1.jar:/Users/ihababadi/.m2/repository/net/bytebuddy/byte-buddy-agent/1.12.1/byte-buddy-agent-1.12.1.jar:/Users/ihababadi/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/Users/ihababadi/.m2/repository/io/cucumber/cucumber-java/7.1.0/cucumber-java-7.1.0.jar:/Users/ihababadi/.m2/repository/io/cucumber/cucumber-core/7.1.0/cucumber-core-7.1.0.jar:/Users/ihababadi/.m2/repository/io/cucumber/cucumber-gherkin/7.1.0/cucumber-gherkin-7.1.0.jar:/Users/ihababadi/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.1.0/cucumber-gherkin-messages-7.1.0.jar:/Users/ihababadi/.m2/repository/io/cucumber/messages/17.1.1/messages-17.1.1.jar:/Users/ihababadi/.m2/repository/io/cucumber/tag-expressions/4.1.0/tag-expressions-4.1.0.jar:/Users/ihababadi/.m2/repository/io/cucumber/cucumber-expressions/13.0.1/cucumber-expressions-13.0.1.jar:/Users/ihababadi/.m2/repository/io/cucumber/datatable/7.1.0/datatable-7.1.0.jar:/Users/ihababadi/.m2/repository/io/cucumber/cucumber-plugin/7.1.0/cucumber-plugin-7.1.0.jar:/Users/ihababadi/.m2/repository/io/cucumber/docstring/7.1.0/docstring-7.1.0.jar:/Users/ihababadi/.m2/repository/io/cucumber/html-formatter/17.0.0/html-formatter-17.0.0.jar:/Users/ihababadi/.m2/repository/io/cucumber/create-meta/6.0.4/create-meta-6.0.4.jar:/Users/ihababadi/.m2/repository/io/cucumber/cucumber-junit/7.1.0/cucumber-junit-7.1.0.jar:/Users/ihababadi/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/ihababadi/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/ihababadi/.m2/repository/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar:/Users/ihababadi/.m2/repository/org/aspectj/aspectjrt/1.9.19/aspectjrt-1.9.19.jar:/Users/ihababadi/.m2/repository/org/aspectj/aspectjweaver/1.9.19/aspectjweaver-1.9.19.jar:/Users/ihababadi/.m2/repository/org/aspectj/aspectjtools/1.9.19/aspectjtools-1.9.19.jar:"/>
+    <property name="java.vm.vendor" value="Homebrew"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="20"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="FR"/>
+    <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/20.0.1/libexec/openjdk.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/ihababadi/Desktop/java_clean_code/correctiontpglobal1/target/surefire/surefirebooter8098850241939564152.jar /Users/ihababadi/Desktop/java_clean_code/correctiontpglobal1/target/surefire 2023-07-06T15-05-12_312-jvmRun1 surefire16184042439569392271tmp surefire_01817799822742218122tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/ihababadi/Desktop/java_clean_code/correctiontpglobal1/target/test-classes:/Users/ihababadi/Desktop/java_clean_code/correctiontpglobal1/target/classes:/Users/ihababadi/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/Users/ihababadi/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/ihababadi/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/Users/ihababadi/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/ihababadi/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/Users/ihababadi/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/Users/ihababadi/.m2/repository/org/mockito/mockito-core/4.1.0/mockito-core-4.1.0.jar:/Users/ihababadi/.m2/repository/net/bytebuddy/byte-buddy/1.12.1/byte-buddy-1.12.1.jar:/Users/ihababadi/.m2/repository/net/bytebuddy/byte-buddy-agent/1.12.1/byte-buddy-agent-1.12.1.jar:/Users/ihababadi/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/Users/ihababadi/.m2/repository/io/cucumber/cucumber-java/7.1.0/cucumber-java-7.1.0.jar:/Users/ihababadi/.m2/repository/io/cucumber/cucumber-core/7.1.0/cucumber-core-7.1.0.jar:/Users/ihababadi/.m2/repository/io/cucumber/cucumber-gherkin/7.1.0/cucumber-gherkin-7.1.0.jar:/Users/ihababadi/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.1.0/cucumber-gherkin-messages-7.1.0.jar:/Users/ihababadi/.m2/repository/io/cucumber/messages/17.1.1/messages-17.1.1.jar:/Users/ihababadi/.m2/repository/io/cucumber/tag-expressions/4.1.0/tag-expressions-4.1.0.jar:/Users/ihababadi/.m2/repository/io/cucumber/cucumber-expressions/13.0.1/cucumber-expressions-13.0.1.jar:/Users/ihababadi/.m2/repository/io/cucumber/datatable/7.1.0/datatable-7.1.0.jar:/Users/ihababadi/.m2/repository/io/cucumber/cucumber-plugin/7.1.0/cucumber-plugin-7.1.0.jar:/Users/ihababadi/.m2/repository/io/cucumber/docstring/7.1.0/docstring-7.1.0.jar:/Users/ihababadi/.m2/repository/io/cucumber/html-formatter/17.0.0/html-formatter-17.0.0.jar:/Users/ihababadi/.m2/repository/io/cucumber/create-meta/6.0.4/create-meta-6.0.4.jar:/Users/ihababadi/.m2/repository/io/cucumber/cucumber-junit/7.1.0/cucumber-junit-7.1.0.jar:/Users/ihababadi/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/ihababadi/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/ihababadi/.m2/repository/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar:/Users/ihababadi/.m2/repository/org/aspectj/aspectjrt/1.9.19/aspectjrt-1.9.19.jar:/Users/ihababadi/.m2/repository/org/aspectj/aspectjweaver/1.9.19/aspectjweaver-1.9.19.jar:/Users/ihababadi/.m2/repository/org/aspectj/aspectjtools/1.9.19/aspectjtools-1.9.19.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/ihababadi"/>
+    <property name="user.language" value="fr"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2023-04-18"/>
+    <property name="java.home" value="/opt/homebrew/Cellar/openjdk/20.0.1/libexec/openjdk.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/ihababadi/Desktop/java_clean_code/correctiontpglobal1"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/ihababadi/Desktop/java_clean_code/correctiontpglobal1/target/surefire/surefirebooter8098850241939564152.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="20.0.1"/>
+    <property name="user.name" value="ihababadi"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="13.3"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Homebrew"/>
+    <property name="localRepository" value="/Users/ihababadi/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/bz/pcm73lx90nz_zws31nl8_rn00000gn/T/"/>
+    <property name="sonar.token" value="sqp_ba414d868d2fac39c5a7708a70f3b09b14815720"/>
+    <property name="java.version" value="20.0.1"/>
+    <property name="user.dir" value="/Users/ihababadi/Desktop/java_clean_code/correctiontpglobal1"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="sonar.projectKey" value="globalTP1"/>
+    <property name="java.library.path" value="/Users/ihababadi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Homebrew"/>
+    <property name="java.vm.version" value="20.0.1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="64.0"/>
+  </properties>
+  <testcase name="testCreateReservationShouldRaiseInvalidReservationExceptionWhenInvalidClientName" classname="ReservationServiceTest" time="0.193"/>
+  <testcase name="testGetReservationWithValidClientNameReturnClientReservation" classname="ReservationServiceTest" time="0.007"/>
+  <testcase name="testCreateReservationInvokeSaveRespositoryOneTime" classname="ReservationServiceTest" time="0.002"/>
+  <testcase name="testGetReservationThrowExceptionWhenReservationNotFound" classname="ReservationServiceTest" time="0.001"/>
+  <testcase name="testCreateReservationReturnCorrectReservationClientName" classname="ReservationServiceTest" time="0"/>
+</testsuite>
