@@ -19,4 +19,10 @@ public class ReservationServiceImpl implements ReservationService {
         Reservation createdReservation = reservationRespository.save(reservation);
         return createdReservation;
     }
+
+    @Override
+    public Reservation getReservation(String clientName) {
+        Reservation reservation = reservationRespository.findByClientName(clientName);
+        return reservation;
+    }
 }

@@ -4,4 +4,5 @@ import org.example.entity.Reservation;
 
 public interface ReservationRepository {
     Reservation save(Reservation reservation);
+    Reservation findByClientName(String clientName);
 }

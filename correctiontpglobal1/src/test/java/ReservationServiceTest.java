@@ -45,4 +45,16 @@ public class ReservationServiceTest {
         });
     }
 
+    @Test
+    public void testGetReservation() {
+        String clientName = "Ihab ABADI";
+        Reservation mockReservation = Reservation.builder().clientName(clientName).build();
+        Mockito.when(reservationRepository.findByClientName(clientName)).thenReturn(mockReservation);
+        Reservation returnedReservation = reservationService.getReservation(clientName);
+
+        Mockito.verify(reservationRepository, Mockito.times(1)).findByClientName(clientName);
+
+        Assertions.assertEquals(clientName, returnedReservation.getClientName());
+    }
+
 }
