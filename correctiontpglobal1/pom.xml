@@ -81,7 +81,7 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.7.7.201606060606</version>
-                <executions>
+                <!--<executions>
                     <execution>
                         <goals>
                             <goal>prepare-agent</goal>
@@ -94,7 +94,7 @@
                             <goal>report</goal>
                         </goals>
                     </execution>
-                </executions>
+                </executions>-->
             </plugin>
 
             <!--<plugin>
