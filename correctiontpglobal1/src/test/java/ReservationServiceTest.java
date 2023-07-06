@@ -1,11 +1,13 @@
 import org.example.entity.Reservation;
 import org.example.exception.InvalidReservationException;
+import org.example.exception.ReservationNotFoundException;
 import org.example.repository.ReservationRepository;
 import org.example.service.ReservationService;
 import org.example.service.impl.ReservationServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 
 public class ReservationServiceTest {
@@ -46,7 +48,7 @@ public class ReservationServiceTest {
     }
 
     @Test
-    public void testGetReservation() {
+    public void testGetReservationWithValidClientNameReturnClientReservation() throws ReservationNotFoundException {
         String clientName = "Ihab ABADI";
         Reservation mockReservation = Reservation.builder().clientName(clientName).build();
         Mockito.when(reservationRepository.findByClientName(clientName)).thenReturn(mockReservation);
@@ -55,6 +57,15 @@ public class ReservationServiceTest {
         Mockito.verify(reservationRepository, Mockito.times(1)).findByClientName(clientName);
 
         Assertions.assertEquals(clientName, returnedReservation.getClientName());
+    }
+
+    @Test
+    public void testGetReservationThrowExceptionWhenReservationNotFound() {
+        String clientName = "Ihab ABADI";
+        Mockito.when(reservationRepository.findByClientName(clientName)).thenReturn(null);
+        Assertions.assertThrowsExactly(ReservationNotFoundException.class, () -> {
+            reservationService.getReservation(clientName);
+        });
     }
 
 }

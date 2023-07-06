@@ -4,6 +4,7 @@ import org.example.entity.Reservation;
 import org.example.exception.InvalidReservationException;
 import org.example.repository.ReservationRepository;
 import org.example.service.ReservationService;
+import org.example.exception.ReservationNotFoundException;
 
 public class ReservationServiceImpl implements ReservationService {
 
@@ -21,8 +22,10 @@ public class ReservationServiceImpl implements ReservationService {
     }
 
     @Override
-    public Reservation getReservation(String clientName) {
+    public Reservation getReservation(String clientName) throws ReservationNotFoundException {
         Reservation reservation = reservationRespository.findByClientName(clientName);
+        if(reservation == null)
+            throw new ReservationNotFoundException();
         return reservation;
     }
 }
