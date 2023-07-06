@@ -22,5 +22,7 @@ public class CliInterface {
         reservationService.createReservation(clientName, reservationDate, tableSize);
 
         Reservation reservation = reservationService.getReservation(clientName);
+
+        System.out.println(reservation);
     }
 }
