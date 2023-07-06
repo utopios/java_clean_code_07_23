@@ -1,8 +1,8 @@
 import org.example.entity.Reservation;
+import org.example.exception.InvalidReservationException;
 import org.example.repository.ReservationRepository;
 import org.example.service.ReservationService;
 import org.example.service.impl.ReservationServiceImpl;
-import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -20,7 +20,7 @@ public class ReservationServiceTest {
     }
 
     @Test
-    public void testCreationReservationInvokeSaveRespositoryOneTime() {
+    public void testCreateReservationInvokeSaveRespositoryOneTime() throws InvalidReservationException {
         String clientName = "Ihab ABADI";
         String reservationDate = "2023-07-06";
         int tableSize = 2;
@@ -29,12 +29,20 @@ public class ReservationServiceTest {
     }
 
     @Test
-    public void testCreationReservationReturnCorrectReservationClientName() {
+    public void testCreateReservationReturnCorrectReservationClientName() throws InvalidReservationException {
         String clientName = "Ihab ABADI";
         String reservationDate = "2023-07-06";
         int tableSize = 2;
-        Mockito.when(reservationRepository.save(Reservation.builder().clientName(clientName).build())).thenReturn(Reservation.builder().clientName(clientName).build());
-        Reservation reservation = reservationService.createReservation(clientName, reservationDate, tableSize);
-        Assertions.assertEquals(clientName, reservation.getClientName());
+        Mockito.when(reservationRepository.save(Mockito.any(Reservation.class))).thenReturn(Reservation.builder().clientName(clientName).build());
+        Reservation returnedReservation = reservationService.createReservation(clientName, reservationDate, tableSize);
+        Assertions.assertEquals(clientName, returnedReservation.getClientName());
     }
+
+    @Test
+    public void testCreateReservationShouldRaiseInvalidReservationExceptionWhenInvalidClientName() {
+        Assertions.assertThrowsExactly(InvalidReservationException.class, () -> {
+            reservationService.createReservation(null,"", 1);
+        });
+    }
+
 }
