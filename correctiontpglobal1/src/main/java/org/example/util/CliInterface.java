@@ -10,7 +10,7 @@ public class CliInterface {
 
     private ReservationService reservationService;
 
-    private CliInterface(ReservationService reservationService) {
+    public CliInterface(ReservationService reservationService) {
         this.reservationService = reservationService;
     }
 
