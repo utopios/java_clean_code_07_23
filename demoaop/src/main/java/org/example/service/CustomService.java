@@ -8,6 +8,7 @@ public class CustomService {
 
     @Loggable
     @Performance
+    @Transaction(value = "HIGH")
     public void methode() {
         System.out.println("Methode A");
     }
