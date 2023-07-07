@@ -5,7 +5,7 @@ org/example/service/impl/ReservationServiceImpl.class
 org/example/entity/Reservation.class
 org/example/annotation/HandleException.class
 org/example/util/CliInterface.class
-org/example/entity/Reservation$ReservationBuilder.class
+org/example/util/ReservationBuilder.class
 org/example/repository/impl/InMemoryReservationRepositoryImpl.class
 org/example/aspect/HandleExceptionAspect.class
 org/example/repository/ReservationRepository.class

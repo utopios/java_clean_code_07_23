@@ -1,0 +1,10 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+correctiontpglobal1,org.example.entity,Reservation,18,19,0,0,8,7,5,3,5,3
+correctiontpglobal1,org.example.exception,InvalidReservationException,0,3,0,0,0,1,0,1,0,1
+correctiontpglobal1,org.example.exception,ReservationNotFoundException,0,3,0,0,0,1,0,1,0,1
+correctiontpglobal1,org.example.util,ReservationBuilder,0,28,0,0,0,8,0,5,0,5
+correctiontpglobal1,org.example.util,CliInterface,20,0,0,0,4,0,3,0,3,0
+correctiontpglobal1,org.example.repository.impl,InMemoryReservationRepositoryImpl,41,0,0,0,5,0,4,0,4,0
+correctiontpglobal1,org.example.aspect,HandleExceptionAspect,36,0,4,0,6,0,7,0,5,0
+correctiontpglobal1,org.example,Main,14,0,0,0,3,0,2,0,2,0
+correctiontpglobal1,org.example.service.impl,ReservationServiceImpl,0,41,0,4,0,12,0,5,0,3

@@ -19,7 +19,7 @@ public class CliInterface {
         String clientName = "toto tata";
         String reservationDate = "2023-07-07";
         int tableSize = 5;
-        reservationService.createReservation(clientName, reservationDate, tableSize);
+        reservationService.createReservation(null, reservationDate, tableSize);
 
         Reservation reservation = reservationService.getReservation(clientName);
 

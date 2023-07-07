@@ -80,9 +80,10 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.7.7.201606060606</version>
-                <!--<executions>
+                <version>0.8.7</version>
+                <executions>
                     <execution>
+                        <id>prepare-agent</id>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
@@ -94,10 +95,10 @@
                             <goal>report</goal>
                         </goals>
                     </execution>
-                </executions>-->
+                </executions>
             </plugin>
 
-            <!--<plugin>
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>aspectj-maven-plugin</artifactId>
                 <version>1.14.0</version>
@@ -105,7 +106,7 @@
                     <complianceLevel>11</complianceLevel>
                     <source>11</source>
                     <target>11</target>
-                    &lt;!&ndash;<annotationProcessorPaths>
+                    <!--<annotationProcessorPaths>
                         <path>
 
                             <groupId>org.projectlombok</groupId>
@@ -116,7 +117,7 @@
 
                         </path>
 
-                    </annotationProcessorPaths>&ndash;&gt;
+                    </annotationProcessorPaths>-->
                 </configuration>
                 <executions>
                     <execution>
@@ -141,7 +142,7 @@
                 </dependencies>
 
 
-            </plugin>-->
+            </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
